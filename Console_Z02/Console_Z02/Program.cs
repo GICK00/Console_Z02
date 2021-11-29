@@ -6,12 +6,12 @@ namespace Console_Z02
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("| Проверка точки на нахождение в заштрихованной области");
             bool repit = true;
             while (repit == true)
             {
                 try
-                {
-                    Console.WriteLine("| Проверка точки на нахождение в заштрихованной области");
+                { 
                     Console.WriteLine("| Ведите точку.");
                     Console.Write("| x = ");
                     int x = Convert.ToInt32(Console.ReadLine());
