@@ -85,70 +85,41 @@ namespace Console_Z02_2
                                 break;
                         }
                         Console.WriteLine("| Старая дата: {0:00} " + TxTmonthLost + " {1:0000}", day, year);
-
-                        Console.WriteLine("| Попробовать снова? Да / Нет");
-                        Console.Write("| : ");
-                        string repitTxT = Convert.ToString(Console.ReadLine());
-
-                        if (repitTxT == "Да")
-                        {
-                            repit = true;
-                            Console.WriteLine("|---------------------------");
-                        }
-                        else if (repitTxT == "Нет")
-                            repit = false;
-                        else
-                        {
-                            Console.WriteLine("|---------------------------");
-                            Console.WriteLine("| Некорректный ввод данных!");
-                            repit = false;
-                        }
+                        rep(out repit);
                     } 
                     else
                     {
                         Console.WriteLine("|---------------------------");
                         Console.WriteLine("| Неверный формат даты!");
-                        Console.WriteLine("| Попробовать снова? Да / Нет");
-                        Console.Write("| : ");
-                        string repitTxT = Convert.ToString(Console.ReadLine());
-
-                        if (repitTxT == "Да")
-                        {
-                            repit = true;
-                            Console.WriteLine("|---------------------------");
-                        }
-                        else if (repitTxT == "Нет")
-                            repit = false;
-                        else
-                        {
-                            Console.WriteLine("|---------------------------");
-                            Console.WriteLine("| Некорректный ввод данных!");
-                            repit = false;
-                        }
+                        rep(out repit);
                     }
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("|---------------------------");
                     Console.WriteLine("| Некорректный ввод данных!");
-                    Console.WriteLine("| Попробовать снова? Да / Нет");
-                    Console.Write("| : ");
-                    string repitTxT = Convert.ToString(Console.ReadLine());
-
-                    if (repitTxT == "Да")
-                    {
-                        repit = true;
-                        Console.WriteLine("|---------------------------");
-                    }
-                    else if (repitTxT == "Нет")
-                        repit = false;
-                    else
-                    {
-                        Console.WriteLine("|---------------------------");
-                        Console.WriteLine("| Некорректный ввод данных!");
-                        repit = false;
-                    }
+                    rep(out repit);
                 }
+            }
+        }
+        static void rep(out bool repit)
+        {
+            Console.WriteLine("| Попробовать снова? Да / Нет");
+            Console.Write("| : ");
+            string repitTxT = Convert.ToString(Console.ReadLine());
+
+            if (repitTxT == "Да")
+            {
+                repit = true;
+                Console.WriteLine("|---------------------------");
+            }
+            else if (repitTxT == "Нет")
+                repit = false;
+            else
+            {
+                Console.WriteLine("|---------------------------");
+                Console.WriteLine("| Некорректный ввод данных!");
+                repit = false;
             }
         }
     }
